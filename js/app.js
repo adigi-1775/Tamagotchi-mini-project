@@ -92,17 +92,17 @@ let feeding = document.getElementById('hunger').value;
     document.querySelector('.buttons').innerHTML = `${feeding}`
 })
 
-let button = document.getElementById('Sleep')
-    button.addEventListener('click', (event)=>{
+let button1 = document.getElementById('Sleep')
+    button1.addEventListener('click', (event)=>{
       event.preventDefault();
-let feeding = document.getElementById('hunger').value;
+let feeding = document.getElementById('sleepiness').value;
     document.querySelector('.buttons').innerHTML = `${feeding}`
 })
 
-let button = document.getElementById('Play')
-    button.addEventListener('click', (event)=>{
+let button2 = document.getElementById('Play')
+    button2.addEventListener('click', (event)=>{
       event.preventDefault();
-let feeding = document.getElementById('hunger').value;
+let feeding = document.getElementById('boredom').value;
     document.querySelector('.buttons').innerHTML = `${feeding}`
     })
 
