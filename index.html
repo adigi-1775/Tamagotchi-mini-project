@@ -7,30 +7,18 @@
   </head>
   <body>
     <form id="form">
-      <input type="text" id="name" placeholder="Name">
-      <button id="Submit">Submit</button>
+      <input type="text" id="add-name" placeholder="Name">
+      <button type="submit" id="name-button" text="rename">Submit</button>
     </form>
-    <div id="stats">
-      <div>
-        Hunger:
-         <span id="hunger">0</span>
-      </div>
-      <div>
-        Sleepiness:
-        <span id="sleepiness">0</span>
-      </div>
-      <div>
-        Boredom:
-        <span id="boredom">0</span>
-      </div>
-      <div>
-        Age:
-        <span id="age">0</span>
-      </div>
+    <h1 id="name">Tamagotchi Name</h1>
+    <div id="metrics">
+      <div>Hunger:<span id="hunger"> 0</span></div>
+      <div>Sleepiness:<span id="sleepiness"> 0</span></div>
+      <div>Boredom:<span id="boredom"> 0</span></div>
+      <div>Age:<span id="age"> 0</span></div>
     </div>
-    <div id="img">
-      <img src="">
-    </div>
+    <div><span id="time"></span></div>
+    <div id="img"><img src=""></div>
     <div class="buttons">
       <button id="Feed">Feed</button>
       <button id="Sleep">Sleep</button>
