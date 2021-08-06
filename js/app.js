@@ -1,7 +1,7 @@
 // console.log('Tamagotchi');
 
 const name = []
-// alert('To begin, give your Tamagotchi a name!')
+alert('To begin, give your Tamagotchi a name!')
 
 class Tamagotchi {
   constructor(name, age){
@@ -13,100 +13,121 @@ class Tamagotchi {
   this.dead = false
 }
 feedTama(){
-  this.hunger--
-  let feedTime = createElement('div')
-      feedTime.setAttribute('id', 'feed-tamagotchi')
-
-  let feedTime1 = document.querySelector('#feed-tamagotchi')
+    this.hunger--
 }
 playWithTama(){
   this.boredom--
-
 }
 tamaSleep(){
   this.sleepiness--
-
 }
 increaseAge(){
-  this.age++
-
+  setInterval(()=>{
+    const timerElement = document.querySelector('#age')
+          timerElement.innerHTML = `${this.age}`
+          this.age++
+  },9000)
 }
 increaseHunger(){
-  this.hunger++
-
+  setInterval(()=>{
+    const timerElement = document.querySelector('#hunger')
+          timerElement.innerHTML = `${this.hunger}`
+          this.hunger++
+  },3000)
 }
 increaseSleepiness(){
-  this.sleepiness++
-
+  setInterval(()=>{
+    const timerElement = document.querySelector('#sleepiness')
+          timerElement.innerHTML = `${this.sleepiness}`
+          this.sleepiness++
+  },4000)
 }
 increaseBoredom(){
-  this.boredom++
+  setInterval(()=>{
+    const timerElement = document.querySelector('#boredom')
+          timerElement.innerHTML = `${this.boredom}`
+          this.boredom++
+  },2000)
+}
+death(){
+  this.alive = false
+  clearInterval()
+}
+morph(){
 
 }
-// death(){
-
-// }
-// morph(){
-
-// {
-
 }
+const newTama = new Tamagotchi('tama1')
+
+// const moveAround = document.querySelector('#Play')
+//       moveAround.addEventListener('click', (event)=>{
+//         tamaPet.setAttribute('src', '')
+//
+//       })
+
+// const nightTime = document.querySelector('#Sleep')
+//       nightTime = addEventListener('click', (event)=>{
+//         let nightBackground = document.querySelector('screen')
+//             document.style.backgroundImage = ''
+//       })
+
 
 // game logic
-// const game = {
-//   time: 0,
-//   startTimer(){
-//     this.intervalId = setInterval(()=>{
-//       this.time++
-//       const timeInMillisecond = this.time * 1000
-//
-//
-//       let timerElement = document.querySelector('#time')
-//           timerElement.innerHTML = ()
-//
-//     })
-//   },
-//
-//
-//   start(name){
-//     const myTama1 = new Tamagotchi(name)
-//     this.myTama = myTama1
-//   }
-//
-// }
+const game = {
+  time: 0,
+  startTime(){
+    if(this.hunger === 10){
+      clearInterval()
+      newTama.death()
+    }
+    if(this.sleepiness === 10){
+      newTama.death()
+      clearInterval()
+    }
+    if(this.boredom === 10){
+      newTama.death()
+      clearInterval()
+    }
+    if(this.age 2){
+      newTama.morph()
+    }else{
+    newTama.increaseHunger()
+    newTama.increaseAge()
+    newTama.increaseBoredom()
+    newTama.increaseSleepiness()
+    }
+  }
+}
 
-
+console.log(newTama);
 
 // event listeners
 let form = document.getElementById('name-button')
     form.addEventListener('click', (event)=>{
-      event.preventDefault();
+      event.preventDefault()
 let submitName = document.getElementById('add-name').value;
     document.querySelector('h1').innerHTML = `${submitName}`
+    game.startTime()
 })
 
 let button = document.getElementById('Feed')
     button.addEventListener('click', (event)=>{
-      event.preventDefault();
-let feeding = document.getElementById('hunger').value;
-    document.querySelector('.buttons').innerHTML = `${feeding}`
+      event.preventDefault()
+      newTama.feedTama()
+      // game.updateNum()
 })
 
 let button1 = document.getElementById('Sleep')
     button1.addEventListener('click', (event)=>{
-      event.preventDefault();
-let feeding = document.getElementById('sleepiness').value;
-    document.querySelector('.buttons').innerHTML = `${feeding}`
+      event.preventDefault()
+      newTama.tamaSleep()
 })
 
 let button2 = document.getElementById('Play')
     button2.addEventListener('click', (event)=>{
-      event.preventDefault();
-let feeding = document.getElementById('boredom').value;
-    document.querySelector('.buttons').innerHTML = `${feeding}`
-    })
-
-
+      event.preventDefault()
+      newTama.playWithTama()
+})
 
 
 

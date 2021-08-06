@@ -2,15 +2,107 @@ body {
   background-color: green;
 }
 
+#img1 {
+  max-width: 200px;
+  max-height: 200px;
+  float: right;
+  margin-right: 0px 30px 0px 0px;
+}
+
 #metrics {
   text-align: center;
 }
 
 .buttons {
-  text-align: center;
+  margin-top: 35px;
+  margin-left: 10px;
+  justify-content: space-around;
+  display: flex;
+  align-items: flex-end;
+  /* margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  text-align: center; */
+}
+
+#Feed:active{
+  transform: translateY(2px);
+}
+
+#Sleep:active{
+  transform: translateY(2px);
+}
+
+#Play:active{
+  transform: translateY(2px);
+}
+
+#name-button:active{
+  transform: translateY(2px);
+}
+
+#Feed {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding: 5px 10px 5px 10px;
+}
+
+#Sleep {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding: 5px 10px 5px 10px;
+}
+
+#Play {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding: 5px 10px 5px 10px;
 }
 
 h1 {
-  text-align: center;
+  justify-content: space-around;
   font-style: italic;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#metrics {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+#device {
+  height: 420px;
+  width: 400px;
+  background-color: lightblue;
+  margin: auto;
+  margin-top: 70px;
+  border-radius: 4%;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  display: block
+}
+
+#screen {
+  height: 275px;
+  width: 300px;
+  background-color: white;
+  margin-top: 30px;
+  margin-left: 45px;
+  border-radius: 4%;
+  border-width: 5px;
+  border-style: solid;
+}
+
+#name-button {
+
 }

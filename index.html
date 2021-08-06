@@ -4,26 +4,35 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title></title>
+      <div class ="box">
+      <img src="images/giga-pet.png" id="img1">
+      </div>
   </head>
   <body>
+    <h1 id="name">Tamagotchi Name</h1>
     <form id="form">
       <input type="text" id="add-name" placeholder="Name">
       <button type="submit" id="name-button" text="rename">Submit</button>
     </form>
-    <h1 id="name">Tamagotchi Name</h1>
-    <div id="metrics">
-      <div>Hunger:<span id="hunger"> 0</span></div>
-      <div>Sleepiness:<span id="sleepiness"> 0</span></div>
-      <div>Boredom:<span id="boredom"> 0</span></div>
-      <div>Age:<span id="age"> 0</span></div>
+    <div id="device">
+      <div id="screen">
+        <div id="metrics">
+          <div>Hunger: <span id="hunger"> 0</span></div>
+          <div>Sleepiness: <span id="sleepiness"> 0</span></div>
+          <div>Boredom: <span id="boredom"> 0</span></div>
+          <div>Age: <span id="age"> 0</span></div>
+        </div>
+        <div class="img-container">
+          <div id="img"><img src=" "></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="Feed">Feed</button>
+        <button id="Sleep">Sleep</button>
+        <button id="Play">Play</button>
+      </div>
     </div>
     <div><span id="time"></span></div>
-    <div id="img"><img src=""></div>
-    <div class="buttons">
-      <button id="Feed">Feed</button>
-      <button id="Sleep">Sleep</button>
-      <button id="Play">Play</button>
-    </div>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
