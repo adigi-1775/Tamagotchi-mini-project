@@ -1,7 +1,7 @@
 // console.log('Tamagotchi');
 
 const name = []
-alert('To begin, give your Tamagotchi a name!')
+// alert('To begin, give your Tamagotchi a name!')
 
 class Tamagotchi {
   constructor(name, age){
@@ -14,25 +14,40 @@ class Tamagotchi {
 }
 feedTama(){
     this.hunger--
+  if(this.hunger >= 0){
+    this.hunger--
+  }else{
+    this.hunger = 0
+  }
 }
 playWithTama(){
   this.boredom--
+  if(this.boredom >= 0){
+    this.boredom--
+  }else{
+    this.boredom = 0
+  }
 }
 tamaSleep(){
   this.sleepiness--
+  if(this.sleepiness >= 0){
+    this.sleepiness--
+  }else{
+    this.sleepiness = 0
+  }
 }
 increaseAge(){
   setInterval(()=>{
     const timerElement = document.querySelector('#age')
+    this.age++
           timerElement.innerHTML = `${this.age}`
-          this.age++
-  },9000)
+  },7000)
 }
 increaseHunger(){
   setInterval(()=>{
     const timerElement = document.querySelector('#hunger')
-          timerElement.innerHTML = `${this.hunger}`
           this.hunger++
+          timerElement.innerHTML = `${this.hunger}`
   },3000)
 }
 increaseSleepiness(){
@@ -50,25 +65,30 @@ increaseBoredom(){
   },2000)
 }
 death(){
-  this.alive = false
-  clearInterval()
+  this.dead = true
+  if(this.dead = true){
+    clearInterval()
+  }
 }
 morph(){
+
+}
+morph2(){
 
 }
 }
 const newTama = new Tamagotchi('tama1')
 
-// const moveAround = document.querySelector('#Play')
-//       moveAround.addEventListener('click', (event)=>{
-//         tamaPet.setAttribute('src', '')
-//
-//       })
+// const char1Move = document.querySelector('#Play')
+//       char1Move.addEventListener('click', (event)=>{
+//         let charmander1 = document.querySelector('#char1')
+//         charmander1.setAttribute('src', 'Tamagotchi-mini-project/images/Charizard.png')
+// })
 
 // const nightTime = document.querySelector('#Sleep')
 //       nightTime = addEventListener('click', (event)=>{
 //         let nightBackground = document.querySelector('screen')
-//             document.style.backgroundImage = ''
+//             document.body.style.backgroundImage = ''
 //       })
 
 
@@ -77,19 +97,21 @@ const game = {
   time: 0,
   startTime(){
     if(this.hunger === 10){
-      clearInterval()
       newTama.death()
+      // clearInterval()
     }
     if(this.sleepiness === 10){
       newTama.death()
-      clearInterval()
+      // clearInterval()
     }
     if(this.boredom === 10){
       newTama.death()
-      clearInterval()
+      // clearInterval()
     }
-    if(this.age 2){
+    if(this.age === 2){
       newTama.morph()
+    }else if (this.age === 4){
+      newTama.morph2()
     }else{
     newTama.increaseHunger()
     newTama.increaseAge()
@@ -114,7 +136,6 @@ let button = document.getElementById('Feed')
     button.addEventListener('click', (event)=>{
       event.preventDefault()
       newTama.feedTama()
-      // game.updateNum()
 })
 
 let button1 = document.getElementById('Sleep')
@@ -140,29 +161,7 @@ let button2 = document.getElementById('Play')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// , 'Tamagotchi-mini-project/images/Charmander.gif', 'Tamagotchi-mini-project/images/Charizard.png'
 
 
 
