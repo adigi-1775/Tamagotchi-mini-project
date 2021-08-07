@@ -1,7 +1,7 @@
 // console.log('Tamagotchi');
 
 const name = []
-alert('To begin, give your Tamagotchi a name!')
+alert('To begin, give your Pikagotchi a name!')
 
 class Tamagotchi {
   constructor(name, age){
@@ -42,7 +42,7 @@ increaseAge(){
     const timerElement = document.querySelector('#age')
           this.age++
           timerElement.innerHTML = `${this.age}`
-  },5000)
+  },1000)
 }
 increaseHunger(){
   return setInterval(()=>{
@@ -76,7 +76,7 @@ death(){
     clearInterval(game.boredomTimer)
 }
 morph(){
-  document.getElementById('pika').setAttribute('src', 'images/26-Raichu.png')
+  document.getElementById('pika').setAttribute('src', 'images/026-01.png')
   }
 }
 const newTama = new Tamagotchi('tama1')
@@ -149,7 +149,7 @@ let button2 = document.getElementById('Play')
       moveAround()
 })
 
- 
+
 
 
 
