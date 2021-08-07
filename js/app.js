@@ -42,7 +42,7 @@ increaseAge(){
     const timerElement = document.querySelector('#age')
           this.age++
           timerElement.innerHTML = `${this.age}`
-  },1000)
+  },5000)
 }
 increaseHunger(){
   return setInterval(()=>{
