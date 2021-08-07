@@ -69,8 +69,6 @@ death(){
     this.dead = true;
     let pikaPik = document.querySelector('#pika')
         pikaPik.setAttribute('src', 'https://ci.memecdn.com/4257541.jpg')
-        pikaPik.style.height='100px';
-        pikaPik.style.width='100px';
     clearInterval(game.intervalID)
     clearInterval(game.hungerTimer)
     clearInterval(game.ageTimer)
