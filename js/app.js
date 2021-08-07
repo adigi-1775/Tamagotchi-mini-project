@@ -1,7 +1,7 @@
 // console.log('Tamagotchi');
 
 const name = []
-// alert('To begin, give your Tamagotchi a name!')
+alert('To begin, give your Tamagotchi a name!')
 
 class Tamagotchi {
   constructor(name, age){
@@ -21,6 +21,7 @@ feedTama(){
   }
 }
 playWithTama(){
+  // movePet
   this.boredom--
   if(this.boredom >= 0){
     this.boredom--
@@ -37,91 +38,78 @@ tamaSleep(){
   }
 }
 increaseAge(){
-  setInterval(()=>{
+  return setInterval(()=>{
     const timerElement = document.querySelector('#age')
-    this.age++
+          this.age++
           timerElement.innerHTML = `${this.age}`
-  },7000)
+  },5000)
 }
 increaseHunger(){
-  setInterval(()=>{
+  return setInterval(()=>{
     const timerElement = document.querySelector('#hunger')
           this.hunger++
           timerElement.innerHTML = `${this.hunger}`
   },3000)
 }
 increaseSleepiness(){
-  setInterval(()=>{
+  return setInterval(()=>{
     const timerElement = document.querySelector('#sleepiness')
-          timerElement.innerHTML = `${this.sleepiness}`
           this.sleepiness++
+          timerElement.innerHTML = `${this.sleepiness}`
   },4000)
 }
 increaseBoredom(){
-  setInterval(()=>{
+  return setInterval(()=>{
     const timerElement = document.querySelector('#boredom')
-          timerElement.innerHTML = `${this.boredom}`
           this.boredom++
+          timerElement.innerHTML = `${this.boredom}`
   },2000)
 }
 death(){
-  this.dead = true
-  if(this.dead = true){
-    clearInterval()
-  }
+    this.dead = true;
+    let pikaPik = document.querySelector('#pika')
+        pikaPik.setAttribute('src', 'https://ci.memecdn.com/4257541.jpg')
+    clearInterval(game.intervalID)
+    clearInterval(game.hungerTimer)
+    clearInterval(game.ageTimer)
+    clearInterval(game.sleepinessTimer)
+    clearInterval(game.boredomTimer)
 }
 morph(){
-
-}
-morph2(){
-
-}
+  document.getElementById('pika').setAttribute('src', 'images/26-Raichu.png')
+  }
 }
 const newTama = new Tamagotchi('tama1')
-
-// const char1Move = document.querySelector('#Play')
-//       char1Move.addEventListener('click', (event)=>{
-//         let charmander1 = document.querySelector('#char1')
-//         charmander1.setAttribute('src', 'Tamagotchi-mini-project/images/Charizard.png')
-// })
-
-// const nightTime = document.querySelector('#Sleep')
-//       nightTime = addEventListener('click', (event)=>{
-//         let nightBackground = document.querySelector('screen')
-//             document.body.style.backgroundImage = ''
-//       })
-
+const moveAround = ()=>{
+    setInterval(()=>{
+      let l = Math.ceil(Math.random()*30);
+      let t = Math.ceil(Math.random()*30);
+      document.getElementById('pika').style.left = `${l}%`
+      document.getElementById('pika').style.top = `${t}`
+    },1000)
+}
 
 // game logic
 const game = {
   time: 0,
+  intervalID: null,
   startTime(){
-    if(this.hunger === 10){
+    if(newTama.hunger === 10){
       newTama.death()
-      // clearInterval()
-    }
-    if(this.sleepiness === 10){
+      // clearInterval(game.intervalID)
+    }else if(newTama.sleepiness === 10){
       newTama.death()
-      // clearInterval()
-    }
-    if(this.boredom === 10){
+      // clearInterval(game.intervalID)
+    }else if(newTama.boredom === 10){
       newTama.death()
-      // clearInterval()
-    }
-    if(this.age === 2){
+      // clearInterval(game.intervalID)
+    }else if(newTama.age === 5){
       newTama.morph()
-    }else if (this.age === 4){
-      newTama.morph2()
-    }else{
-    newTama.increaseHunger()
-    newTama.increaseAge()
-    newTama.increaseBoredom()
-    newTama.increaseSleepiness()
+      // console.log('debug morph');
     }
   }
 }
-
-console.log(newTama);
+// console.log(newTama);
 
 // event listeners
 let form = document.getElementById('name-button')
@@ -129,7 +117,13 @@ let form = document.getElementById('name-button')
       event.preventDefault()
 let submitName = document.getElementById('add-name').value;
     document.querySelector('h1').innerHTML = `${submitName}`
-    game.startTime()
+    game.hungerTimer = newTama.increaseHunger()
+    game.ageTimer = newTama.increaseAge()
+    game.boredomTimer = newTama.increaseBoredom()
+    game.sleepinessTimer = newTama.increaseSleepiness()
+    game.intervalID = setInterval(()=>{
+      game.startTime()
+    },1000)
 })
 
 let button = document.getElementById('Feed')
@@ -142,39 +136,20 @@ let button1 = document.getElementById('Sleep')
     button1.addEventListener('click', (event)=>{
       event.preventDefault()
       newTama.tamaSleep()
+      let nightTime = document.querySelector('#screen')
+          nightTime.style.backgroundImage = "url('https://cdn.wallpapersafari.com/20/78/o1imlV.jpg')"
+      let textColor = document.querySelector('#metrics')
+          textColor.style.color = 'white'
 })
 
 let button2 = document.getElementById('Play')
     button2.addEventListener('click', (event)=>{
       event.preventDefault()
       newTama.playWithTama()
+      moveAround()
 })
 
-
-
-
-
-
-
-
-
-
-
-
-// , 'Tamagotchi-mini-project/images/Charmander.gif', 'Tamagotchi-mini-project/images/Charizard.png'
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
